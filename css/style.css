@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 100vh;
+
+  padding: 2vh;
+}
+
+.header__container {
+  height: 100%;
+  background-size: cover;
+  background-position: top;
+  border-radius: 2px;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(12, 132, 153, 0.7),
+      rgba(77, 171, 247, 0.7)
+    ),
+    url(../programming.jpg);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.header__element {
+  width: 20rem;
+  height: 20rem;
+}
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  color: #0b7285;
+  font-size: 3.2rem;
+  font-weight: 500;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border-radius: 9px;
+  text-decoration: none;
+  box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-1rem) scale(1.1);
+  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-0.5rem) scale(1.1);
+  box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f7f7f7;
+  z-index: -1;
+
+  transition: all 0.5s;
+}
+
+.btn:hover::after {
+  transform: scale(1.2);
+  background-color: transparent;
+}
+
+.description-box {
+  font-size: 1.6rem;
+}
+
+.focus-page {
+  font-weight: 700;
+}
+
+.description-page {
+  border-top: 1px solid #0b7285;
+  padding-top: 1.2rem;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes moveInLeft {
+  0% {
+    transform: translateX(-3rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 100;
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100;
+  }
+}
+
+.header__element:nth-child(odd) {
+  animation: moveInLeft 0.8s ease-out;
+}
+
+.header__element:nth-child(even) {
+  animation: moveInBottom 0.8s ease-out;
+}
